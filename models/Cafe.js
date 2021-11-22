@@ -4,6 +4,7 @@ const CafeSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "Please add name of cafe"],
+    unique: true,
   },
   address: String,
   bio: String,
