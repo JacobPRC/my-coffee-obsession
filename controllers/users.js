@@ -15,22 +15,6 @@ exports.getUserById = asyncHandler(async (req, res, next) => {
   res.status(200).json({ success: true, data: user });
 });
 
-// POST /profile/new
-exports.createUser = asyncHandler(async (req, res, next) => {
-  //   try {
-  const user = await User.create(req.body);
-
-  res.status(200).json({ success: true, data: user });
-  //   } catch {
-  //     return next(
-  //       new ErrorResponse(
-  //         `User with email ${req.body.email} already found in system`,
-  //         404
-  //       )
-  //     );
-  //   }
-});
-
 // PUT /profile/:userId
 exports.updateUser = asyncHandler(async (req, res) => {
   const user = await User.findByIdAndUpdate(req.params.userId, req.body, {
